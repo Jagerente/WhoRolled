@@ -1,0 +1,35 @@
+## Interface: 16001
+## Title: WhoRolled
+## Notes: Shows who picked Need, Greed or Pass on each item, what they rolled and who won, and keeps a history of every roll.
+## Notes-ruRU: Показывает, кто выбрал Need, Greed или Pass, сколько выбросил и кто выиграл, и хранит историю всех роллов.
+## Version: 1.0.0
+## IconTexture: Interface\AddOns\WhoRolled\Media\Icon
+## SavedVariables: WhoRolledDB
+## SavedVariablesPerCharacter: WhoRolledCharDB
+## AddonCompartmentFunc: WhoRolled_OnAddonCompartmentClick
+
+Core\Init.lua
+Core\Locales.lua
+Core\Database.lua
+Core\Group.lua
+Core\Rolls.lua
+Core\LootHistory.lua
+Core\LootChat.lua
+Core\Stats.lua
+UI\Theme.lua
+UI\Widgets.lua
+UI\FloatingText.lua
+UI\HistoryText.lua
+UI\HistoryRows.lua
+UI\RowList.lua
+UI\HistoryNav.lua
+UI\HistoryList.lua
+UI\HistoryDetail.lua
+UI\HistoryStats.lua
+UI\HistoryWindow.lua
+UI\RecentWindow.lua
+UI\TestMode.lua
+UI\MinimapButton.lua
+UI\About.lua
+UI\Options.lua
+Core\Commands.lua

@@ -1,0 +1,5 @@
+package-as: WhoRolled
+
+ignore:
+  - README.md
+  - branding
