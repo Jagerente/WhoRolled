@@ -1,0 +1,33 @@
+name: Release
+
+on:
+  push:
+    tags:
+      - "v*"
+
+permissions:
+  contents: write
+
+jobs:
+  package:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          fetch-depth: 0
+
+      - name: Check that the tag matches the TOC version
+        run: |
+          toc_version=$(sed -n 's/^## Version: *//p' WhoRolled.toc | tr -d '\r')
+          if [ "${GITHUB_REF_NAME#v}" != "$toc_version" ]; then
+            echo "::error::Tag $GITHUB_REF_NAME does not match '## Version: $toc_version' in WhoRolled.toc"
+            exit 1
+          fi
+
+      - name: Package and publish to GitHub and CurseForge
+        uses: BigWigsMods/packager@v2
+        with:
+          args: -n "{package-name}-{project-version}:{project-version}"
+        env:
+          GITHUB_OAUTH: ${{ secrets.GITHUB_TOKEN }}
+          CF_API_TOKEN: ${{ secrets.CF_API_TOKEN }}

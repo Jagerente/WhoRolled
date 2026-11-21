@@ -7,6 +7,7 @@
 ## SavedVariables: WhoRolledDB
 ## SavedVariablesPerCharacter: WhoRolledCharDB
 ## AddonCompartmentFunc: WhoRolled_OnAddonCompartmentClick
+## X-Curse-Project-ID: 1820018
 
 Core\Init.lua
 Core\Locales.lua
